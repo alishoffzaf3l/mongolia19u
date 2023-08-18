@@ -29,6 +29,7 @@ export default defineComponent({
         let formRef = ref(null);
         let visible = ref(false);
         let spinning = ref(false);
+        let routerCall = () => null;
         let spinTip = ref("");
 
         /**
@@ -58,9 +59,8 @@ export default defineComponent({
             extra: () => slots.extra ? slots.extra() : null,
             closeIcon: () => slots.closeIcon ? slots.closeIcon() : null,
         }
-
         provide(FuncContextKey, editContext);
-        return {formRef, spinning, spinTip, visible, slotProxy, editContext}
+        return {formRef, spinning, spinTip, visible, slotProxy, editContext, routerCall}
     },
     render() {
         let model = {}, context = this.editContext;
@@ -80,6 +80,6 @@ export default defineComponent({
                 </UForm>
             </ASpin>
         </ADrawer>)
-    }
+    },
 })
 
