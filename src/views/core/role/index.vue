@@ -28,13 +28,13 @@
                   v-auth="'core:role:perm'" :config="{copy: ['id']}">分配权限</UFuncTag>
       </template>
     </UViewTable>
-    <UFormDrawer uid="funcPerm" title="分配功能权限" placement="left" width="480">
+    <UFormDrawer uid="funcPerm" title="分配功能权限" placement="left" width="580">
       <template #default="{model}">
         &nbsp;<a-button @click="() => expanded('close')">折叠</a-button>
         &nbsp;<a-button type="primary" @click="() => expanded('open')">展开</a-button>
-        <a-checkbox style="float: right" v-model:checked="checkedValue" @change="checked">全选</a-checkbox>
+         <a-checkbox style="float: right" v-model:checked="checkedValue" @change="checked">全选</a-checkbox>
         <UTree url="/core/role/allMenus" :checkedUrl="getCheckedUrl(model)" :checkStrictly="false"
-                 showLine checkable :selectable="true" ref="funcMenus"/>
+                 showLine checkable ref="funcMenus"/>
       </template>
       <template #footer>
         <UFuncBtn func="reset" @click="reset">重置</UFuncBtn>

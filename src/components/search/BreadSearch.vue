@@ -6,14 +6,10 @@
       </template>
     </UForm>
     <a-row class="ivz-is-fun" align="middle">
-      <ACol :xs="0" :sm="6" :md="4" :lg="4" :xl="3" :xxl="2">
-        <h3 style="margin-bottom: 0px">{{title}}</h3>
-      </ACol>
-      <ACol class="ivz-isf-bru" :class="left ? 'left' : 'right'"
-            :xs="24" :sm="18" :md="15" :lg="16" :xl="17" :xxl="19">
+      <ACol class="ivz-isf-bru" :xs="24" :sm="18" :md="18" :lg="18">
         <slot name="func"></slot>
       </ACol>
-      <a-col style="text-align: right" :xs="0" :sm="0" :md="5" :lg="4" :xl="4" :xxl="3">
+      <a-col style="text-align: right" :xs="0" :sm="6" :md="6" :lg="6">
         <ASpace>
           <ATooltip placement="top" title="列管理">
             <a-dropdown v-model:visible="visible" :trigger="['click']"
@@ -76,7 +72,6 @@ export default {
   name: "UBreadSearch",
   props: {
     tid: {type: String, default: null},
-    title: {type: String, default: ''},
     left: {type: Boolean, default: false},
     uid: {type: String, required: true, default: CoreConsts.DefaultSearchUid}
   },

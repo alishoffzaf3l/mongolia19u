@@ -73,7 +73,7 @@ export default defineComponent({
 
         return(<ADrawer v-model={[this.visible, 'visible', ["modifier"]]} style={{position: 'absolute'}}
                          {...this.$props} closable={false} v-slots={this.slotProxy} forceRender={true}
-                         getContainer=".ivz-main-container" ref="ADrawerRef">
+                         getContainer=".ivz-main-container" ref="ADrawerRef" class="u-edit-form u-form-drawer">
             <ASpin size="small" tip={this.spinTip} spinning={this.spinning}>
                 <UForm {...this.$attrs} ref="iemFormRef">
                     {this.$slots.default ? this.$slots.default({model, context}) : []}
